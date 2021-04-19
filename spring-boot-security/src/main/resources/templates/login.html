@@ -1,0 +1,63 @@
+<html xmlns="http://www.thymeleaf.org">
+
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+
+		<form class="form-horizontal" th:action="@{/login}" method="POST">
+			<fieldset>
+
+				<div align="centre" th:if="${param.error}">
+					<p style="color: red;">Username & Password invalid!!</p>
+				</div>
+
+				<!-- Form Name -->
+				<legend>Form Name</legend>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="username">username</label>
+					<div class="col-md-4">
+						<input id="username" name="username" type="text" placeholder="Enter UserName"
+							class="form-control input-md" required="">
+
+					</div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="password">Password</label>
+					<div class="col-md-4">
+						<input id="password" name="password" type="text" placeholder="Enter Password"
+							class="form-control input-md" required="">
+
+					</div>
+				</div>
+
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for=""></label>
+					<div class="col-md-4">
+						<button type="submit" value="Login" class="btn btn-success">Login</button>
+					</div>
+				</div>
+
+			</fieldset>
+		</form>
+		<form th:action="@{/registration}" method="get">
+			<button class="btn btn-md btn-warning btn-block" type="Submit">Sign up</button>
+		</form>
+	</div>
+
+</body>
+
+
+</html>
